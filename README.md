@@ -5,3 +5,6 @@ Implementacja systemu przetwarzania płatności z użyciem TDD, mocków, stubów
 
 ## Wzorce projektowe
 Projekt uproszczonego systemu zarządzania biblioteką, który symuluje sposób, w jaki biblioteka zarządza książkami, użytkownikami i powiadomieniami.
+
+## CI + CD
+Stwórz CI pipeline do zadania z TDD.
