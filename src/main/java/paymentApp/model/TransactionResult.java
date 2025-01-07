@@ -1,5 +1,7 @@
 package paymentApp.model;
 
+import java.util.Objects;
+
 public class TransactionResult {
     Boolean success;
     String transactionId;
@@ -51,5 +53,18 @@ public class TransactionResult {
                 " success: " + success + '\'' +
                 ", message: " + message + '\'' +
                 ", transaction status: " + transactionStatus ;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        TransactionResult that = (TransactionResult) o;
+        return Objects.equals(success, that.success) && Objects.equals(transactionId, that.transactionId) && Objects.equals(message, that.message) && transactionStatus == that.transactionStatus;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(success, transactionId, message, transactionStatus);
     }
 }
