@@ -1,8 +1,10 @@
 package com.dg.paymentAPP.model;
 
-import static com.dg.paymentApp.model.TransactionStatus.*;
+import static com.dg.paymentApp.model.TransactionStatus.COMPLETED;
+import static com.dg.paymentApp.model.TransactionStatus.FAILED;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.mockito.Mockito.*;
+import static org.mockito.ArgumentMatchers.*;
+import static org.mockito.Mockito.verify;
 
 import com.dg.paymentApp.logger.Logger;
 import org.junit.jupiter.api.Test;
@@ -32,12 +34,13 @@ class PaymentProcessorTest {
 
     //Tests for processPayment
     @Test
-    void shouldReturnSuccessTRForProcessPayment(){
+    void shouldReturnSuccessTRForProcessPayment() {
         //given
         String userID = "123";
         Double amount = 100.0;
         String transactionID = "/trid";
-        Mockito.when(paymentGateway.charge(userID, amount)).thenReturn(new TransactionResult(true, userID + transactionID, "Payment success", COMPLETED ));
+        Mockito.when(paymentGateway.charge(userID, amount))
+                .thenReturn(new TransactionResult(true, userID + transactionID, "Payment success", COMPLETED ));
 
         //when
         TransactionResult tr = paymentProcessor.processPayment(userID, amount);
@@ -47,7 +50,7 @@ class PaymentProcessorTest {
     }
 
     @Test
-    void shouldReturnFailedTRForNullUserId(){
+    void shouldReturnFailedTRForNullUserId() {
         //given
         Mockito.when(paymentGateway.charge(isNull(), anyDouble())).thenThrow(new NetworkException("Amount cannot be null"));
 
@@ -55,12 +58,12 @@ class PaymentProcessorTest {
         TransactionResult result = paymentProcessor.processPayment(null, 100.0);
 
         //then
-        TransactionResult expected = new TransactionResult(false, "Payment failed", "Payment failed", FAILED);
+        TransactionResult expected = new TransactionResult(false,"Payment failed","Payment failed", FAILED);
         assertEquals(expected, result);
     }
 
     @Test
-    void shouldReturnFailedTRForNullAmount(){
+    void shouldReturnFailedTRForNullAmount() {
         //given
         Mockito.when(paymentGateway.charge(anyString(), isNull())).thenThrow(new NetworkException("Username cannot be empty"));
 
@@ -72,9 +75,9 @@ class PaymentProcessorTest {
         assertEquals(expected, result);
     }
 
-    @CsvSource({"123, -5", "123, 100000000000000000"})
+    @CsvSource( {"123, -5", "123, 100000000000000000"} )
     @ParameterizedTest
-    void shouldReturnFailedTRForAmountOutOfRange(String userId, double amount){
+    void shouldReturnFailedTRForAmountOutOfRange(String userId, double amount) {
         //given
         Mockito.when(paymentGateway.charge(anyString(), anyDouble())).
                 thenThrow(new PaymentException("Amount cannot be negative or greater than 1000000000.0"));
@@ -90,7 +93,7 @@ class PaymentProcessorTest {
     //Tests for refundPayment
 
     @Test
-    void shouldReturnFailedTRForNullTransactionID(){
+    void shouldReturnFailedTRForNullTransactionID() {
         //given
         Mockito.when(paymentGateway.refund(isNull())).thenThrow(new NetworkException("TransactionId cannot be empty"));
 
@@ -103,7 +106,7 @@ class PaymentProcessorTest {
     }
 
     @Test
-    void shouldReturnFailedTRForEmptyTransactionID(){
+    void shouldReturnFailedTRForEmptyTransactionID() {
         //given
         Mockito.when(paymentGateway.refund("")).thenThrow(new NetworkException("TransactionId cannot be empty"));
 
@@ -111,12 +114,12 @@ class PaymentProcessorTest {
         TransactionResult result = paymentProcessor.refundPayment("");
 
         //then
-        TransactionResult expected = new TransactionResult(false, "Refund failed", "Refund failed", FAILED);
+        TransactionResult expected = new TransactionResult(false,"Refund failed","Refund failed", FAILED);
         assertEquals(expected, result);
     }
 
     @Test
-    void shouldReturnFailedWithRefundException(){
+    void shouldReturnFailedWithRefundException() {
         //given
         Mockito.when(paymentGateway.refund(anyString())).thenThrow(new RefundException("Refund failed"));
 
@@ -124,15 +127,16 @@ class PaymentProcessorTest {
         TransactionResult result = paymentProcessor.refundPayment("123");
 
         //then
-        TransactionResult expected = new TransactionResult(false, "Refund failed", "Refund failed", FAILED);
+        TransactionResult expected = new TransactionResult(false,"Refund failed","Refund failed", FAILED);
         assertEquals(expected, result);
     }
 
     @Test
-    void shouldReturnSuccessTRForRefund(){
+    void shouldReturnSuccessTRForRefund() {
         //given
         String transactionId = "123";
-        Mockito.when(paymentGateway.refund(anyString())).thenReturn(new TransactionResult(true, transactionId, "Payment success", COMPLETED));
+        Mockito.when(paymentGateway.refund(anyString()))
+                .thenReturn(new TransactionResult(true, transactionId, "Payment success", COMPLETED));
 
         //when
         TransactionResult result = paymentProcessor.refundPayment(transactionId);
@@ -145,7 +149,7 @@ class PaymentProcessorTest {
     //Tests for getPaymentStatus
 
     @Test
-    void shouldReturnFailedForNullId(){
+    void shouldReturnFailedForNullId() {
         //given
         Mockito.when(paymentGateway.getStatus(isNull())).thenThrow(NetworkException.class);
 
@@ -158,7 +162,7 @@ class PaymentProcessorTest {
     }
 
     @Test
-    void shouldReturnFailedForEmptyId(){
+    void shouldReturnFailedForEmptyId() {
         //given
         Mockito.when(paymentGateway.getStatus("")).thenThrow(NetworkException.class);
 
@@ -173,7 +177,7 @@ class PaymentProcessorTest {
 
 
     @Test
-    void shouldReturnTransactionDoNotExist(){
+    void shouldReturnTransactionDoNotExist() {
         //given
         Mockito.when(paymentGateway.getStatus(anyString())).thenThrow(NullPointerException.class);
 
@@ -186,7 +190,7 @@ class PaymentProcessorTest {
     }
 
     @Test
-    void shouldReturnTS(){
+    void shouldReturnTS() {
         //given
         Mockito.when(paymentGateway.getStatus(anyString())).thenReturn(COMPLETED);
 
@@ -201,7 +205,7 @@ class PaymentProcessorTest {
     //Logger
 
     @Test
-    void loggerTest(){
+    void loggerTest() {
         // given
         PaymentGateway paymentGateway = Mockito.mock(PaymentGateway.class);
         Logger logger = new Logger();
