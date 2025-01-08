@@ -21,7 +21,7 @@ jobs:
       uses: actions/setup-java@v2
       with:
         distribution: 'temurin'
-        java-version: '22'  # Zmieniono na JDK 22
+        java-version: '22'
 
     - name: Cache Maven dependencies
       uses: actions/cache@v2
@@ -34,8 +34,8 @@ jobs:
     - name: Lint code with SuperLinter (Java only)
       uses: github/super-linter@v4
       env:
-        RUN_LOCAL: false # false, bo uruchamiamy w GitHub Actions
-        VALIDATE_JAVA: true  # Walidacja tylko kodu Java
+        RUN_LOCAL: false
+        VALIDATE_JAVA: true
 
     - name: Build and test
       run: mvn clean test
