@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="84f135be-e89f-4b13-bc7d-5cd27465f7dc" name="Changes" comment="ci 1.3" />
+    <list default="true" id="84f135be-e89f-4b13-bc7d-5cd27465f7dc" name="Changes" comment="ci 1.5" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -26,14 +26,15 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="MIXED" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitRewordedCommitMessages">
     <option name="onto" value="a5bc5004c3a669293d5df6e1495a125dbf550348" />
   </component>
-  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
-  <component name="KubernetesApiProvider"><![CDATA[{
-  "isMigrated": true
-}]]></component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
 }</component>
@@ -45,48 +46,48 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "Downloaded.Files.Path.Enabled": "false",
-    "JUnit.PaymentProcessorTest.executor": "Run",
-    "JUnit.PaymentProcessorTest.shouldReturnFailedForEmptyId.executor": "Run",
-    "JUnit.PaymentProcessorTest.shouldReturnFailedForNullId.executor": "Run",
-    "JUnit.PaymentProcessorTest.shouldReturnFailedTRForAmountOutOfRange.executor": "Run",
-    "JUnit.PaymentProcessorTest.shouldReturnFailedTRForEmptyTransactionID.executor": "Run",
-    "JUnit.PaymentProcessorTest.shouldReturnFailedTRForNullAmount.executor": "Run",
-    "JUnit.PaymentProcessorTest.shouldReturnFailedTRForNullTransactionID.executor": "Run",
-    "JUnit.PaymentProcessorTest.shouldReturnFailedTRForNullUserId.executor": "Run",
-    "JUnit.PaymentProcessorTest.shouldReturnFailedWithRefundException.executor": "Run",
-    "JUnit.PaymentProcessorTest.shouldReturnLoggerMgs.executor": "Run",
-    "JUnit.PaymentProcessorTest.shouldReturnNetworkException.executor": "Run",
-    "JUnit.PaymentProcessorTest.shouldReturnSuccessTRForProcessPayment.executor": "Debug",
-    "JUnit.PaymentProcessorTest.shouldReturnSuccessTRForRefund.executor": "Run",
-    "JUnit.PaymentProcessorTest.shouldReturnTS.executor": "Run",
-    "JUnit.PaymentProcessorTest.shouldReturnTransactionDoNotExist.executor": "Run",
-    "JUnit.PaymentProcessorTest.spyTest.executor": "Run",
-    "JUnit.test.executor": "Run",
-    "Python.test.executor": "Run",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "CI__CD",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/gredk/IdeaProjects/DPP/src/test/java/com/dg",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;JUnit.PaymentProcessorTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PaymentProcessorTest.shouldReturnFailedForEmptyId.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PaymentProcessorTest.shouldReturnFailedForNullId.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PaymentProcessorTest.shouldReturnFailedTRForAmountOutOfRange.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PaymentProcessorTest.shouldReturnFailedTRForEmptyTransactionID.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PaymentProcessorTest.shouldReturnFailedTRForNullAmount.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PaymentProcessorTest.shouldReturnFailedTRForNullTransactionID.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PaymentProcessorTest.shouldReturnFailedTRForNullUserId.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PaymentProcessorTest.shouldReturnFailedWithRefundException.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PaymentProcessorTest.shouldReturnLoggerMgs.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PaymentProcessorTest.shouldReturnNetworkException.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PaymentProcessorTest.shouldReturnSuccessTRForProcessPayment.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.PaymentProcessorTest.shouldReturnSuccessTRForRefund.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PaymentProcessorTest.shouldReturnTS.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PaymentProcessorTest.shouldReturnTransactionDoNotExist.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PaymentProcessorTest.spyTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.test.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test.executor&quot;: &quot;Run&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;CI__CD&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/gredk/IdeaProjects/DPP/src/test/java/com/dg&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\gredk\IdeaProjects\DPP\src" />
@@ -231,7 +232,15 @@
       <option name="project" value="LOCAL" />
       <updated>1736339368603</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="ci 1.5">
+      <option name="closed" value="true" />
+      <created>1736340144627</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1736340144627</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -267,7 +276,8 @@
     <MESSAGE value="ci 1.1" />
     <MESSAGE value="ci 1.2" />
     <MESSAGE value="ci 1.3" />
-    <option name="LAST_COMMIT_MESSAGE" value="ci 1.3" />
+    <MESSAGE value="ci 1.5" />
+    <option name="LAST_COMMIT_MESSAGE" value="ci 1.5" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/DPP$test.coverage" NAME="test Coverage Results" MODIFIED="1736208733884" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
